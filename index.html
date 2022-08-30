@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piedra Papel y Tijera</title>
+    <link rel="stylesheet" href="./style.css">
+    
+</head>
+<body>
+    <h1 id="title">Piedra | Papel | Tijera</h1> 
+    <h2>Selecciona piedra, papel o tijera</h2>
+    <section class="selection" id="seleccion-">
+        <img id="btn-rock" class="btn-attack" src="./image/piedra.png" alt=""/>
+        <img id="btn-paper" class="btn-attack" src="./image/papel.png" alt=""/>
+        <img id="btn-scissors" class="btn-attack" src="./image/tijera.png" alt=""/>
+    </section>
+
+    <section class="battlefield" id="battlefield">
+        <div id="box-player" class="box-battle spinner" >
+            <p>Jugador</p>
+        </div>
+        <div class="box-battle"><p class="text-message">VS</p></div>
+        <div id="box-pc" class="box-battle spinner">
+            <p>PC</p>
+        </div>
+        <section class="marker"></section>
+        <div>
+            <p id="msj-battle" class="text-message"> </p>
+        </div>
+    </section>
+    
+    <script src="./index.js"></script>  
+</body>
+</html>
