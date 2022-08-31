@@ -1,71 +1,65 @@
-const btnRock = document.querySelector('#btn-rock')
-const btnPaper = document.querySelector('#btn-paper')
-const btnScissor = document.querySelector('#btn-scissors')
 const textMessage = document.querySelector('.text-message')
 const battlefield = document.querySelector('.battlefield')
-let player 
-let turnPC
+const selectionSection = document.querySelector('#seleccion')
+
+let boxPlayer
+let boxPC
 
 const figure = [
-    {name:'Piedra',img:'image/piedra.png'},
-    {name:'Papel',img:'image/papel.png'},
-    {name:'Tijera',img:'image/tijera.png'},
+    {name:'Piedra',id:'btn-rock', src: 'image/piedra.png'},
+    {name:'Papel',id:'btn-paper', src: 'image/papel.png'},
+    {name:'Tijera',id:'btn-scissors', src: 'image/tijera.png'},
 ]
 
-btnRock.addEventListener('click',()=>{
-    player = 'Piedra'
-    pcRandom()
-    console.log(player)
-})
+for (const element of selectionSection.children) {
+    element.addEventListener('click', ({ target }) => {
+        const player = target.getAttribute('data-option')
+        const src = target.getAttribute('src')
+        pcRandom({name: player, src})
+    })
+}
 
-btnPaper.addEventListener('click',()=>{
-    player = 'Papel'
-   pcRandom()
-    console.log(player)
-})
-
-btnScissor.addEventListener('click',()=>{
-    player = 'Tijera'
-    pcRandom()
-    console.log(player)
-})
-
-//Funcion aleatoria de las figuras
-const aleatorio = () =>{
+const getComputerOption = () =>{
     let figureRandom = Math.floor(Math.random()* figure.length)
-    let valueRandom = figure[figureRandom].name
-    console.log(valueRandom)
+    return figure[figureRandom]
 }
 
+const pcRandom = (player)=>{
+    const turnPC = getComputerOption()
+    const boxBattle = document.querySelectorAll('.box-battle')
+    boxBattle[0].classList.add('spinner')
+    boxBattle[2].classList.add('spinner')
 
-const pcRandom = ()=>{
-    let turnRandom = aleatorio()
-    if(turnRandom == figure[0].img){
-        turnPC = 'Piedra'
-    }else if(turnRandom == figure[1].img){
-        turnPC = 'Papel'
-    }else if(turnRandom == figure[2].img){
-        turnPC = 'Tijera'
-    }
-  combat()
+    setTimeout(() => {
+        boxBattle[0].classList.remove('spinner')
+        boxBattle[2].classList.remove('spinner')
+
+        boxBattle[0].children[0].src = turnPC.src
+        boxBattle[2].children[0].src = player.src
+    }, 500)
+
+    battlefield.style.display = 'flex'
+    startGame(player.name, turnPC.name)
 }
 
-
-const combat = ()=>{
+const startGame = (player, turnPC)=>{
+    console.log(figure.name)
     if(player == turnPC){
         textMessage.innerText = 'Empate'
-    }else if(player == figure[0].img && turnPC == figure[2].img){
+    }else if(player == figure.name && turnPC == figure.name){
         textMessage.innerText = 'Ganaste 🥳'
-    }else if(player == figure[1].img && turnPC == figure[0].img){
+    }else if(player == figure.name && turnPC == figure.name){
         textMessage.innerText = 'Ganaste 🥳'
-    }else if (player == figure[2].img && turnPC ==figure[1].img){
+    }else if (player == figure.name && turnPC ==figure.name){
         textMessage.innerText = 'Ganaste 🥳'
     }else{
-        textMessage.innerText = 'Perdiste😔'
+        textMessage.innerText = 'Perdiste ga tu madre 😔'
     }
 
-  
+    
 }
+
+
 
 
 

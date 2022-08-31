@@ -11,19 +11,21 @@
 <body>
     <h1 id="title">Piedra | Papel | Tijera</h1> 
     <h2>Selecciona piedra, papel o tijera</h2>
-    <section class="selection" id="seleccion-">
-        <img id="btn-rock" class="btn-attack" src="./image/piedra.png" alt=""/>
-        <img id="btn-paper" class="btn-attack" src="./image/papel.png" alt=""/>
-        <img id="btn-scissors" class="btn-attack" src="./image/tijera.png" alt=""/>
+    <section class="selection" id="seleccion">
+        <img id="btn-rock" data-option='Piedra' class="btn-attack" src="./image/piedra.png" alt=""/>
+        <img id="btn-paper" data-option='Papel' class="btn-attack" src="./image/papel.png" alt=""/>
+        <img id="btn-scissors" data-option='Tijera' class="btn-attack" src="./image/tijera.png" alt=""/>
     </section>
 
     <section class="battlefield" id="battlefield">
-        <div id="box-player" class="box-battle spinner" >
-            <p>Jugador</p>
+        <div id="box-player" class="box-battle" >
+            <img src='' alt='option'/>
         </div>
-        <div class="box-battle"><p class="text-message">VS</p></div>
-        <div id="box-pc" class="box-battle spinner">
-            <p>PC</p>
+        <div class="box-battle">
+            <p class="text-message">VS</p>
+        </div>
+        <div id="box-pc" class="box-battle">
+            <img src='' alt='option'/>
         </div>
         <section class="marker"></section>
         <div>
