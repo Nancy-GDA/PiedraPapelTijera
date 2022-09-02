@@ -19,20 +19,25 @@
 
     <section class="battlefield" id="battlefield">
         <div id="box-player" class="box-battle" >
-            <img src='' alt='option'/>
+            
+            <img src='' alt='option' id="img-boxPlayer"/>
         </div>
         <div class="box-battle">
             <p class="text-message">VS</p>
         </div>
         <div id="box-pc" class="box-battle">
-            <img src='' alt='option'/>
+            <img src='' alt='option' id="img-boxPC"/>
         </div>
-        <section class="marker"></section>
         <div>
             <p id="msj-battle" class="text-message"> </p>
         </div>
     </section>
-    
+    <section class="marker">
+        <p>PC <span id="result-PC">1</span> </p> 
+        <p>Jugador <span id="result-player">1</span></p> 
+    </section>
+    <button class="restart">Reiniciar</button>
     <script src="./index.js"></script>  
+    <script src="prueba.js"></script>
 </body>
 </html>
