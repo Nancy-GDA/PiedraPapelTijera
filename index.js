@@ -81,7 +81,7 @@ const startGame = (player, turnPC)=>{
 const messageFinally = (playerPoints, pcPoints) =>{
     let finallyResult = document.querySelector('.finally-result')
     let selection = document.querySelector('#seleccion')
-    const message = playerPoints > pcPoints ? 'Gansate 🥳' : 'La computadoraa gano 😔'
+    const message = playerPoints > pcPoints ? 'Ganaste 🥳' : 'La computadora gano 😔'
     finallyResult.innerText = message
     finallyResult.style.display = 'block'
     

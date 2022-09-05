@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 :root{
-    --fondo:#D5D8DC;
-    --text:#1C2833;
-    --seleccion:#117A65;
-    --figure:#117A65;
-    --button:#1EA98C;
+    --fondo:#0F71A2;
+    --text:#D5D7EB;
+    --bordes:#5AE8D4;
+    --hover:#630A68;
+    --button:#21A68A;
 }
 
 body{
@@ -32,9 +32,9 @@ font-size: 20px;
 }
 .selection{
     display: flex;
-    border: 2px solid #196F3D;
+    border: 2px solid var(--bordes);
     border-radius: 20px;
-    box-shadow: inset 0 0 10px #444444;
+    box-shadow: inset 0 0 10px #B6EDE6;
 }
 
 .blur{
@@ -59,7 +59,7 @@ font-size: 20px;
 .spinner {
     width: 2rem;
     height: 2rem;
-    background-color: var(--figure);
+    background-color: var(--hover);
     animation: Spinner  1.4s linear infinite;
 }
 
@@ -84,7 +84,7 @@ font-size: 20px;
 }
 
 .btn-attack:hover{
-    background:#D35400 ;
+    background:var(--hover);
     margin: 8px;
 }
 
@@ -99,11 +99,11 @@ font-size: 20px;
     justify-content: space-between;
     align-items: center;
     padding: 10px 25px;
-    border: 1px solid var(--figure);
+    border: 1px solid var(--bordes);
     width: 250px;
     height: 50px;
     border-radius: 20px;
-    box-shadow: inset 0 0 10px #444444;
+    box-shadow: inset 0 0 10px #B6EDE6;
 }
 
 .finally-Result{
@@ -113,10 +113,11 @@ font-size: 20px;
     display: none;
     justify-content: center;
     align-items: center;
-    width: 120px;
+    width: 150px;
     height: 40px;
     border-radius: 10px;
     margin:15px;
+    font-size: 15px;
     background: var(--button);
     border: 1px solid var(--button);
     cursor: pointer;
@@ -125,6 +126,8 @@ font-size: 20px;
 
 .finally-result{
     display:none;
+    font-size: 40px;
+    color:var(--text)
 }
 @keyframes Spinner {
     from {
