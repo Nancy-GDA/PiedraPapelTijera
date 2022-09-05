@@ -83,7 +83,7 @@ const messageFinally = (playerPoints, pcPoints) =>{
     let selection = document.querySelector('#seleccion')
     const message = playerPoints > pcPoints ? 'Ganaste 🥳' : 'La computadora gano 😔'
     finallyResult.innerText = message
-    finallyResult.style.display = 'block'
+    finallyResult.style.display = 'flex'
     
     for (const element of selectionSection.children) {
         element.style.cursor = 'auto'
